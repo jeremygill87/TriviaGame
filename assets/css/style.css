@@ -5,6 +5,16 @@
     font-weight: normal;
     font-style: normal;
 }
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #000000;
+}
 #jumbo-background {
     background-color: #000000;
 }
@@ -21,5 +31,42 @@
 }
 #play,
 #reset {
+    color: #000000;
+    font-weight: bold;
+    border-width: 1px;
+    border-color: #ffdb00;
+    margin-right: 25px;
+}
+.container {
+    margin-top: 0px;
+    width: 100%;
+    background-color: #000000;
+}
+#title-banner {
+    margin-top: 0px;
+    text-align: center;
+}
+
+#mainbox{
+    background-image: url(../images/car-pattern.jpg);
+    background-size: cover;
+    text-align: center;
+    width: 100%;
+}
+
+#question-box,
+#answers-box {
+    margin-left: 50px;
+    width: 50%;
+    text-align: center;
+    align-self: center;
+    background-color: #1eb917;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fefafe;
+}
+
+h2,
+h4 {
     color: #000000;
 }

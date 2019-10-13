@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
+
 <body>
-        <div class="jumbotron jumbotron-fluid" id = "jumbo-background">
-                <div class="container">
-                  <h1 class="display-4" id = "jumbo-words">WELCOME TO JURASSIC PARK TRIVIA</h1>
-                  <p class="lead" id = "tagline">Life uh...finds a way.</p>
-                  <button class = "btn btn-danger" id = "play">Hold on to your butts</button>
-                  <button class= "btn btn-danger" id = "reset">Reset the main circuit</button>
-                </div>
-            </div>
-        <div class = "container">
-            <div class = "row">
-                <div class = "col-md-10 justify-content-center" id = "title-banner">
-                    Title Banner
-                </div>
-        <div class = "col-md-10 justify-content-center" id = "timer">
-            Timer
+    <div class="jumbotron jumbotron-fluid" id="jumbo-background">
+        <div class="container">
+            <h1 class="display-4" id="jumbo-words">WELCOME TO JURASSIC PARK TRIVIA</h1>
+            <p class="lead" id="tagline">Life uh...finds a way.</p>
+            <button class="btn btn-danger" id="play">Hold on to your butts</button>
+            <button class="btn btn-danger" id="reset">Reset the main circuit</button>
+            <audio src="assets/images/Audio/8d82b5_Jurassic_Park_Theme_Song.mp3" autoplay controls loop></audio>
         </div>
-            <div class = "row">
-                <div class = "col-md-10 justify-content-center" id = "mainbox">
-                    <div class = "row">
-                        <div class = "col-md-8" id = "question-box">
-                            Question Box
-                        </div>
-                    <div class = "row">
-                        <div class = "col-md-8" id = "answers-box">
-                            Answers Box
-                        </div>
-                    </div>
-                    </div>
-                </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 justify-content-center" id="title-banner">
+                <img src="assets/images/jurassicpark.jpeg">
             </div>
+            <div class="col-md-10 justify-content-center" id="timer">
+                Timer
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-10 justify-content-center" id="mainbox">
+                <div class="row">
+                    <div class="col-md-8" id="question-box">
+                        
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-md-8" id="answers-box">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </body>
+
 </html>
