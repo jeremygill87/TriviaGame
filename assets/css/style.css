@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'jurassic_parkregular';
+    src: url('../images/Font/jurassicpark-bl48-webfont.woff2') format('woff2'),
+         url('../images/Font/jurassicpark-bl48-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#jumbo-background {
+    background-color: #000000;
+}
+
+#jumbo-words{
+    font-family: 'jurassic_parkregular';
+    font-size: 72px;
+    color: #fefafe;
+}
+#tagline {
+    font-family: 'jurassic_parkregular';
+    font-size: 48px;
+    color: #fefafe;
+}
+#play,
+#reset {
+    color: #000000;
+}
