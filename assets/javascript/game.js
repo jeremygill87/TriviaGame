@@ -1,15 +1,15 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $("#play").on("click", function() {
+    $("#play").on("click", function () {
         game.displayQuestion();
     });
 
-    $(document).on("click", "#choices-button", function(x){
+    $(document).on("click", "#choices-button", function (x) {
         game.selected(x);
     });
-    
-    $("#reset").on("click", function() {
-        reset();
+
+    $("#reset").on("click", function () {
+        game.reset();
     });
 
     var trivia = [
@@ -34,7 +34,7 @@ $(document).ready(function() {
     ];
     var game = {
         currentQuestion: 0,
-        timer: 20,
+        //timer: 20,
         correctCount: 0,
         wrongCount: 0,
         countdown: function () {
@@ -45,60 +45,66 @@ $(document).ready(function() {
                 game.tooSlow();
             }
         },
-        displayQuestion () {
+        displayQuestion() {
             timer = setInterval(game.countdown, 1000);
             $("#question-box").html('<h2>' + trivia[this.currentQuestion].question + '</h2>');
             for (var i = 0; i < trivia[this.currentQuestion].answers.length; i++) {
-                $("#answers-box").append('<button class="selection-button" id = "choices-button"' + 'data-name="' +trivia[this.currentQuestion].answers[i] + '">' + trivia[this.currentQuestion].answers[i] + '</button>' );
+                $("#answers-box").append('<button class="selection-button" id = "choices-button"' + 'data-name="' + trivia[this.currentQuestion].answers[i] + '">' + trivia[this.currentQuestion].answers[i] + '</button>');
             }
         },
         nextQuestion: function () {
             game.timer = 20;
             $("#timer").html(game.timer);
             game.currentQuestion++;
+            $("#answers-box").html("<h2></h2>");
             game.displayQuestion();
         },
-        tooSlow: function() {
+        tooSlow: function () {
             clearInterval(timer);
             $("#timer").html(game.timer);
             $("#answers-box").html("<img src='assets/images/must-go-faster.gif'>");
 
-        if (game.currentQuestion === trivia.length-1) {
-            setTimeout(game.update, 5 * 1000);
-        } else {
-            setTimeout(game.nextQuestion, 5 * 1000);
-        }
-    },
-    update: function() {
-        clearInterval(timer);
-        $("#question-box").html("<img src='../images/crazy.gif'>");
-        $("#answers-box").html("<h3> Number correct: " + correctCount + "</h3>");
-        $("#answers-box").append ("<h3> Number wrong: " + wrongCount + "</h3>");
-    },
+        },
     selected: function (x) {
         clearInterval(timer);
         console.log(trivia[this.currentQuestion].correctAnswer + trivia[this.currentQuestion].image);
-        if ($(x.target).data("name") === trivia[this.currentQuestion].correctAnswer){
-            trivia.correctCount++;
-            game.pauseScreen();
-            $("#answers-box").html('<img src=' + trivia[this.currentQuestion].image + '>');
+        if ($(x.target).data("name") === trivia[this.currentQuestion].correctAnswer) {
+            game.correctCount++;
+            console.log(game.correctCount);
+            game.correctScreen();
+
         } else {
-            trivia.wrongCount++;
-            game.pauseScreen();
-            $("#answers-box").html('<img src=' + trivia[this.currentQuestion].image + '>');
+            game.wrongCount++;
+            game.wrongScreen();
+        }
+        if (game.currentQuestion === trivia.length - 1) {
+            setTimeout(game.update, 5 * 1000);
         }
     },
-    pauseScreen: function () {
-        clearInterval (timer);
-        if (game.currentQuestion === trivia.length -1) {
-            setTimeout(game.update, 5 * 1000);
-        } else {
-            setTimeout(game.nextQuestion, 5 * 1000);
-        };
-        
-        
+    correctScreen: function () {
+        clearInterval(timer);
+        $("#answers-box").prepend('<h2> Clever Girl </h2>');
+        $("#answers-box").html('<img src=' + trivia[this.currentQuestion].image + '>');
+        setTimeout(game.nextQuestion, 5 * 1000);
+    },
+    wrongScreen: function () {
+        clearInterval(timer);
+        $("#answers-box").prepend("<h2>Ah ah ah, you didnt' say the magic word!</h2>");
+        $("#answers-box").html('<img src=' + trivia[this.currentQuestion].image + '>');
+        setTimeout(game.nextQuestion, 5 * 1000);
+    },
+    update: function() {
+        clearInterval(timer);
+        $("#question-box").html("<img src='assets/images/crazy.gif'>");
+        $("#answers-box").append("<h3> Number correct: " + game.correctCount + "</h3>");
+        $("#answers-box").append("<h3> Number wrong: " + game.wrongCount + "</h3>");
+    },
+    reset: function () {
+        this.currentQuestion = 0;
+        this.timer = 20;
+        this.correctCount = 0;
+        this.wrongCount = 0;
+        this.displayQuestion();
     }
 }
-
-
 });
