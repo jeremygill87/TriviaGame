@@ -62,6 +62,7 @@ body {
 
 #question-box,
 #answers-box {
+    margin-top: 50px;
     width: 50%;
     text-align: center;
     align-content: center;
@@ -69,6 +70,9 @@ body {
     font-size: 30px;
     font-weight: bold;
     color: #fefafe;
+    border-color: #820821;
+    border-width: 3px;
+    border-style: solid;
 }
 
 h2,
