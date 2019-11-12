@@ -30,6 +30,42 @@ $(document).ready(function () {
             answers: ["Mathematician", "Philosopher", "Chaotician", "Sex Symbol"],
             correctAnswer: "Chaotician",
             image: "assets/images/chaotician.gif"
+        },
+        {
+            question: "What is the name of the fictional island Jurassic Park is located on?",
+            answers: ["San Lorenzo", "Isla Nublar", "Koholint Island", "Greenland"],
+            correctAnswer: "Isla Nublar",
+            image: "assets/images/there_it_is.gif"
+        },
+        {
+            question: "John Hammond tells everyone that his first ever attraction was what?",
+            answers: ["An island full of murderous prehistoric lizards","A flea circus","A Wild West theme park with robots","Euro-Disney"],
+            correctAnswer: "A flea circus",
+            image: "assets/images/flea-circus.gif"
+        },
+        {
+            question: "Why can't the dinosaurs on the island reproduce?",
+            answers: ["They're all male","Dinosaur contraceptives", "Lack of attraction", "They are all female"],
+            correctAnswer: "They are all female",
+            image: "assets/images/skirts.gif"
+        },
+        {
+            question: "What kind of dinosaur is found to be sick early in the park tour?",
+            answers: ["Triceratops","Stegosaurus","Iguanadon","Dilophosaurus"],
+            correctAnswer: "Triceratops",
+            image: "assets/images/sick-trike.gif"
+        },
+        {
+            question: "How did Dr. Sattler figure out what was wrong with the sick dinosaur?",
+            answers: ["She ran a diagnostic test","She gave it a physical","She investigated the dino droppings", "She had a hunch"],
+            correctAnswer: "She investigated the dino droppings",
+            image: "assets/images/shit.gif"
+        }, 
+        {
+            question: "Which character dies on the toilet?",
+            answers: ["Donald Gennaro", "Robert Muldoon", "Henry Wu", "Elvis"],
+            correctAnswer: "Donald Gennaro",
+            image: "assets/images/gennaro-death.gif"
         }
     ];
     var game = {

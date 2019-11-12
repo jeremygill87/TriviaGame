@@ -17,6 +17,8 @@ body {
 }
 #jumbo-background {
     background-color: #000000;
+    background-image: url(../images/jurassicpark.jpeg);
+    background-position: center;
 }
 
 #jumbo-words{
@@ -55,14 +57,14 @@ body {
     width: 100%;
     margin-bottom: 25px;
     align-content: center;
-    height: 250px;
+    height: 500px;
 }
 
 #question-box,
 #answers-box {
     width: 50%;
     text-align: center;
-    align-self: center;
+    align-content: center;
     background-color: #1eb917;
     font-size: 30px;
     font-weight: bold;
